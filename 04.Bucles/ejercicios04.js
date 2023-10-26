@@ -79,16 +79,18 @@ function Fibonacci(n){
 // Se puede representar mediante la siguiente fórmula: F(n) = F(n-1) + F(n-2)
 // Tu código:👇
 //3
-let fibonacci = 0;
-    if (n=0) {
+//let fibonacci = 0;
+    if (n<=1) {
         fibonacci = n
+        return fibonacci
     }
-    while (n > 0) {
+
+    return Fibonacci(n-1) + Fibonacci(n-2)
+    /*while (n > 1) {
         
         fibonacci = Fibonacci(n-1) + Fibonacci(n-2)
         
-    }
-    return fibonacci
+    }*/
     
 }
 
