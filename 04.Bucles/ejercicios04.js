@@ -1,32 +1,35 @@
 function cantidadDeVocales(phrase){
 // Cuenta la cantidad de vocales en la frase pasada por parametros utilizando un bucle for
 // Tu código:👇
-
+//Hola
     let vocales = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"];
     let contador = 0;
+    
+    for (let j=0; j<vocales.length; j++) {//cuando tengo un vector o un array y quiero obtener el tamaño que tiene tengo que poner length
+    
+        for (let i=0; i<phrase.length; i++) {
 
-    for (let i=0; i<phrase.length; i++) {
-
-        for (let j=0; i<vocales.size; j++) {
-
+            
             if (phrase[i] == vocales[j]) {
-                contador+=1 //esto lo que hace es lo mismo que hacer contador = contador + 1 o contador++
+                contador++//esto lo que hace es lo mismo que hacer contador = contador + 1 o contador++
             }
         }
     }
     return contador
 }
+    
+
 
 function primerDivisible(divisor, dividendo) {
 // Encuentra el primer número divisible por 'num' a partir de un número dado utilizando un bucle while
 // Tu código:👇
-    let i = 2;
+   
 
-    while ( i <= dividendo) {
-        if (dividendo%divisor === 0){
-        return i
+    while ( divisor <= dividendo) {
+        if (dividendo % divisor === 0) {
+        return divisor
         }
-        i++
+        divisor++
     }
 }
 
@@ -59,8 +62,9 @@ function BinarioADecimal(num) {
 // debes tomar este numero binario y ayudandote de un bucle pasarlo a decimal
 // tu código:👇
 //10110
-    suma = 0;
-    potenciaDeDos = num.length - 1;//potencia de dos empieza desde en este caso 4 porque como recorro la string desde la izquiera y en la izquierda la potencia es mas grande tengo que empezar la potencia en grande tmb
+//existe una funcion que se llama reverse() que puedo dar vuelta un numero o string
+    let suma = 0;
+    let potenciaDeDos = num.length - 1;//potencia de dos empieza desde en este caso 4 porque como recorro la string desde la izquiera y en la izquierda la potencia es mas grande tengo que empezar la potencia en grande tmb
 
     for (let i= 0; i < num.length ; i++) {
 
@@ -74,13 +78,18 @@ function Fibonacci(n){
 // Realiza una secuencia Fibonacci con el indice pasado por paramentro
 // Se puede representar mediante la siguiente fórmula: F(n) = F(n-1) + F(n-2)
 // Tu código:👇
-
-    /*while (let i ) {
-
-        for (let i = n; i<= ) {
-
-        }
-    } */
+//3
+let fibonacci = 0;
+    if (n=0) {
+        fibonacci = n
+    }
+    while (n > 0) {
+        
+        fibonacci = Fibonacci(n-1) + Fibonacci(n-2)
+        
+    }
+    return fibonacci
+    
 }
 
 function esPrimo(numero) {
@@ -88,14 +97,19 @@ function esPrimo(numero) {
 //Un número primo es aquel que solo es divisible por 1 y por sí mismo.
 //Si el numero pasado es primo devolve: numero " es primo." , caso contrario: numero " no es primo."
 // Tu código:👇
-
+for (let i = 2; i<numero; i++){
+    if (numero % i == 0) {
+    return numero +" no es primo."
+    }
+}
+return numero + " es primo."
 }
 
 function invertirCadena(cadena) {
 //La función toma una cadena de texto como parámetro, devuelve la cadena invertida.
 //Ejemplo: 'Hola' -> devolver 'aloH'
 //Tu codigo:👇
-
+return cadena.split("").reverse().join("")
 }
   
 module.exports = {
