@@ -2,7 +2,12 @@
 // Completa el siguiente objeto 'alumnos' que tenga como primera propiedad nombre, segunda propiedad apellido, tercera edad y cuarta examen
 // nombre y apellido deben tener como valor un string, edad un entero y examen un booleano.
 // Tu código:
-let alumnos = {}
+let alumnos = {
+    nombre : "Clara",
+    apellido : "Mazuran",
+    edad : 20,
+    examen : true
+}
 
 
 function datosObj(obj){
@@ -12,6 +17,7 @@ function datosObj(obj){
     // 'Bienvenido Leonardo Avila' 
     // tu código aqui:
 
+    return "Bienvenido " + obj["nombre"] + " "+ obj["apellido"]
 }
 
 function cambiandoPropiedades(obj){
@@ -20,6 +26,8 @@ function cambiandoPropiedades(obj){
     // Agregar una propiedad 'nacionalidad' con el valor de 'Argentina'
     // tu código aqui:
 
+    obj["nacionalidad"] = "Argentina"
+    return obj
 }
 
 function eliminarPropiedad(objeto, propiedad) {
@@ -27,12 +35,16 @@ function eliminarPropiedad(objeto, propiedad) {
     // tendrás que eliminar esa propiedad del objeto y devolver el objeto
     // Tu código:
 
+    delete objeto[propiedad]
+    return objeto
 }
 
 function contieneEmail(user) {
     // Devuelve true si el user contiene la propiedad de 'email', si no contiene devuelve false
     // Tu código:
 
+    
+    return user["email"]?true:false
 }
 
 function verificarPassword(user) {
@@ -40,6 +52,11 @@ function verificarPassword(user) {
     // comprueba si el valor de esta propiedad tiene un longitud mayor o igual a 8 caracteres
     // si cumple devolver true, caso contrario devolver 'Por favor, pon una contraseña más segura'
     // Tu código:
+
+    if (user.password.length >= 8) {
+        return true
+    }
+    return "Porfavor, pon una contraseña más segura"
 
 }
 
@@ -49,7 +66,13 @@ function permisosDeEntrada(personas) {
     // si contiene entrada (true) y si es mayor de edad. agregar en un nuevo array, las personas que cumplan
     // el nuevo array debe contener unicamente el nombre de las personas
     // tu código:
-
+    let nuevoArray = [];
+    for (let i=0; i<personas.length; i++) {
+        if (personas[i].entrada == true && personas[i].edad >= 18) {
+            nuevoArray.push(personas[i].nombre)
+        } 
+    }
+    return nuevoArray
 }
 
 //Crea un objeto "libro" con propiedades como título, autor y año de publicación. 
@@ -57,10 +80,16 @@ function permisosDeEntrada(personas) {
 //devuelva la información del libro de la siguiente manera: "El libro {título}, escrito por {autor} , fue publicado en {añoPublicación}".
 //tu codigo:
 
-let libro = {};
+let libro = {
+    título : "Los juegos del Hambre",
+    autor : "Juan",
+    añoPublicación : "2010"
+};
   
   // Función para mostrar la información del libro
   function mostrarInformacionLibro(libro) {
+
+    return "El libro " + libro["título"] + ", escrito por " + libro["autor"] + " , fue publicado en " + libro["añoPublicación"] +"."
 
   }
 
